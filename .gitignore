@@ -1,0 +1,92 @@
+# =====================================
+# Android / Kotlin / Jetpack Compose
+# =====================================
+
+.gradle/
+**/build/
+local.properties
+*.iml
+.idea/
+captures/
+.externalNativeBuild/
+.cxx/
+*.hprof
+.navigation/
+
+# Android generated files
+gen/
+out/
+
+# =====================================
+# Flutter / Dart
+# =====================================
+
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+.pub-cache/
+.pub/
+build/
+.flutter-automation/
+coverage/
+
+# =====================================
+# React Native / JavaScript
+# =====================================
+
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Metro
+.metro-health-check*
+.expo/
+dist/
+
+# =====================================
+# IDEs / Editors
+# =====================================
+
+.vscode/
+*.swp
+*.swo
+*~
+
+# =====================================
+# Operating systems
+# =====================================
+
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# =====================================
+# Environment variables / Secrets
+# =====================================
+
+.env
+.env.*
+!.env.example
+
+# =====================================
+# Temporary files
+# =====================================
+
+*.tmp
+*.temp
+*.log
+*.bak
+
+# =====================================
+# Compiled binaries
+# =====================================
+
+*.class
+*.jar
+*.war
+*.apk
+*.aab
+*.dex
