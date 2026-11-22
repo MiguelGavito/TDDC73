@@ -1,0 +1,20 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.Lab1Xml" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <!-- Customize your light theme here. -->
+        <item name="colorPrimary">#2D8577</item>
+    </style>
+
+    <style name="Theme.Lab1Xml" parent="Base.Theme.Lab1Xml" />
+
+    <style name="GreyButton" parent="Widget.MaterialComponents.Button">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_columnWeight">1</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:textColor">#000000</item>
+        <item name="android:background">@drawable/button_background</item>
+        <item name="backgroundTint">@null</item>
+    </style>
+
+</resources>

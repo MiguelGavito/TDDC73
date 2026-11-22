@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Example 1: Kotlin + XML</string>
+    <string name="button_text">Button</string>
+    <string name="email_label">Email</string>
+</resources>
