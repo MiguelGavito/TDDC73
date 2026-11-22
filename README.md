@@ -3,7 +3,7 @@
 ## Interaction programming
 
 - Miguel Gavito
-- Olivier Bergant
+- Olivier Bergond Alonso
 
 # Git Workflow – Pair Programming
 
