@@ -1,17 +1,6 @@
+import { View, Text, TextInput, Pressable, Image, StatusBar, StyleSheet } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
-import React from 'react';
-
-import {
-  View,
-  Text,
-  TextInput,
-  Pressable,
-  StyleSheet,
-  StatusBar,
-  SafeAreaView,
-} from 'react-native';
-
-// Reusable button component
 function MyButton() {
   return (
     <Pressable style={styles.button}>
@@ -20,167 +9,47 @@ function MyButton() {
   );
 }
 
-// Circular illustration
-function Illustration() {
+function ButtonRow() {
   return (
-    <View style={styles.circle}>
-      <Text style={[styles.emoji, styles.top]}>🎓</Text>
-      <Text style={[styles.emoji, styles.right]}>📚</Text>
-      <Text style={[styles.emoji, styles.bottom]}>🌎</Text>
-      <Text style={[styles.emoji, styles.left]}>🧪</Text>
-
-      <View style={styles.circleCenter}>
-        <Text style={{ fontSize: 32 }}>📖</Text>
-      </View>
+    <View style={styles.buttonRow}>
+      <MyButton />
+      <MyButton />
     </View>
   );
 }
 
 export default function App() {
   return (
-    <SafeAreaView style={styles.container}>
-      <StatusBar
-        backgroundColor="#287F73"
-        barStyle="light-content"
-      />
+    <View style={styles.container}>
+      <StatusBar barStyle="light-content" />
 
-      {/* Top bar */}
-      <View style={styles.header}>
-        <Text style={styles.headerTitle}>
-          Example 1: React Native
-        </Text>
+      <SafeAreaView edges={['top']} style={styles.statusBarArea}>
+        <Text style={styles.title}>Example 1: React Native</Text>
+      </SafeAreaView>
+
+      <Image source={require('./assets/img.png')} style={styles.image} />
+
+      <ButtonRow />
+      <View style={{ height: 30 }} />
+      <ButtonRow />
+
+      <View style={styles.emailRow}>
+        <Text style={styles.emailLabel}>Email</Text>
+        <TextInput style={styles.input} keyboardType="email-address" autoCapitalize="none" />
       </View>
-
-      {/* Main layout */}
-      <View style={styles.content}>
-
-        <Illustration />
-
-        {/* First button row */}
-        <View style={styles.buttonRow}>
-          <MyButton />
-          <MyButton />
-        </View>
-
-        {/* Second button row */}
-        <View style={styles.buttonRow}>
-          <MyButton />
-          <MyButton />
-        </View>
-
-        {/* Email input */}
-        <View style={styles.emailRow}>
-          <Text style={styles.emailLabel}>Email</Text>
-
-          <TextInput
-            style={styles.input}
-            keyboardType="email-address"
-            autoCapitalize="none"
-          />
-        </View>
-
-      </View>
-    </SafeAreaView>
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
-
-  container: {
-    flex: 1,
-    backgroundColor: '#FAFAFA',
-  },
-
-  header: {
-    height: 90,
-    backgroundColor: '#287F73',
-    justifyContent: 'center',
-    paddingHorizontal: 25,
-  },
-
-  headerTitle: {
-    color: 'white',
-    fontSize: 25,
-    fontWeight: 'bold',
-  },
-
-  content: {
-    flex: 1,
-    paddingHorizontal: 30,
-    alignItems: 'center',
-  },
-
-  circle: {
-    width: 230,
-    height: 230,
-    borderRadius: 115,
-    backgroundColor: '#E8A88F',
-    marginTop: 15,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-
-  circleCenter: {
-    width: 105,
-    height: 105,
-    borderRadius: 55,
-    backgroundColor: '#FAFAFA',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-
-  emoji: {
-    position: 'absolute',
-    fontSize: 28,
-  },
-
-  top: { top: 12 },
-  right: { right: 12 },
-  bottom: { bottom: 12 },
-  left: { left: 12 },
-
-  buttonRow: {
-    width: '100%',
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    marginTop: 40,
-  },
-
-  button: {
-    width: 125,
-    height: 65,
-    backgroundColor: '#D6D6D6',
-    justifyContent: 'center',
-    alignItems: 'center',
-    borderRadius: 4,
-    elevation: 3,
-  },
-
-  buttonText: {
-    fontSize: 20,
-    fontWeight: '500',
-    color: '#222222',
-  },
-
-  emailRow: {
-    width: '100%',
-    flexDirection: 'row',
-    alignItems: 'center',
-    marginTop: 80,
-  },
-
-  emailLabel: {
-    width: '30%',
-    fontSize: 20,
-    color: '#888888',
-  },
-
-  input: {
-    flex: 1,
-    height: 45,
-    borderBottomWidth: 2,
-    borderBottomColor: '#D81B60',
-    fontSize: 18,
-  },
-
+  container:     { flex: 1, backgroundColor: '#FAFAFA' },
+  statusBarArea: { backgroundColor: '#1E5E54' },
+  title:         { backgroundColor: '#2D8577', color: 'white', fontSize: 18, fontWeight: '600', padding: 16 },
+  image:         { width: 175, height: 175, alignSelf: 'center', marginVertical: 25 },
+  buttonRow:     { flexDirection: 'row', justifyContent: 'space-around' },
+  button:        { backgroundColor: '#D6D7D7', paddingVertical: 10, paddingHorizontal: 16, elevation: 2 },
+  buttonText:    { color: 'black', fontWeight: '500' },
+  emailRow:      { flexDirection: 'row', alignItems: 'center', marginTop: 35, paddingHorizontal: 15 },
+  emailLabel:    { flex: 0.3, color: '#848484' },
+  input:         { flex: 0.7, borderBottomWidth: 2, borderBottomColor: '#CD1B60', marginRight: 70, paddingVertical: 4 },
 });
